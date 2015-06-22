@@ -1,0 +1,41 @@
+Creatures
+2	Azusa, Lost but Seeking		$37.28
+4	Primeval Titan		$72.92
+
+Spells
+2	Pact of Negation		$8.50
+1	Slaughter Pact		$3.25
+4	Summoner's Pact		$11.12
+4	Amulet of Vigor		$29.60
+4	Summer Bloom		$1.76
+3	Hive Mind		$4.95
+4	Serum Visions		$28.52
+4	Ancient Stirrings		$0.16
+2	Sleight of Hand		$0.08
+
+Lands
+1	Boros Garrison		$0.04
+1	Vesuva		$0.00
+3	Tolaria West		$6.18
+1	Ghost Quarter		$0.04
+1	Sunhome, Fortress of the Legion		$0.03
+3	Gruul Turf		$0.12
+1	Khalni Garden		$0.04
+1	Slayers' Stronghold		$0.02
+1	Selesnya Sanctuary		$0.04
+4	Simic Growth Chamber		$0.68
+1	Radiant Fountain		$0.04
+2	Cavern of Souls		$39.10
+4	Gemstone Mine		$39.08
+1	Golgari Rot Farm		$0.04
+2	Tendo Ice Bridge		$10.86
+
+Sideboard
+1	Ghost Quarter		$0.04
+3	Leyline of Sanctity		$25.23
+2	Seal of Primordium		$0.08
+2	Pyroclasm		$0.08
+2	Thragtusk		$6.88
+2	Swan Song		$0.24
+1	Hornet Queen		$0.51
+1	Nature's Claim		$0.05
