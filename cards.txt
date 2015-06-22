@@ -1,41 +1,33 @@
 Creatures
-2	Azusa, Lost but Seeking		$37.28
-4	Primeval Titan		$72.92
+1	Spellskite		$24.21
+3	Wurmcoil Engine		$30.54
+1	Emrakul, the Aeons Torn		$8.32
 
 Spells
-2	Pact of Negation		$8.50
-1	Slaughter Pact		$3.25
-4	Summoner's Pact		$11.12
-4	Amulet of Vigor		$29.60
-4	Summer Bloom		$1.76
-3	Hive Mind		$4.95
-4	Serum Visions		$28.52
 4	Ancient Stirrings		$0.16
-2	Sleight of Hand		$0.08
+4	Chromatic Sphere		$1.28
+4	Chromatic Star		$0.16
+4	Expedition Map		$0.20
+2	Relic of Progenitus		$0.24
+4	Karn Liberated		$88.24
+4	Sylvan Scrying		$1.08
+2	Ugin, the Spirit Dragon		$12.62
+4	Pyroclasm		$0.16
+3	Oblivion Stone		$40.53
 
 Lands
-1	Boros Garrison		$0.04
-1	Vesuva		$0.00
-3	Tolaria West		$6.18
-1	Ghost Quarter		$0.04
-1	Sunhome, Fortress of the Legion		$0.03
-3	Gruul Turf		$0.12
-1	Khalni Garden		$0.04
-1	Slayers' Stronghold		$0.02
-1	Selesnya Sanctuary		$0.04
-4	Simic Growth Chamber		$0.68
-1	Radiant Fountain		$0.04
-2	Cavern of Souls		$39.10
-4	Gemstone Mine		$39.08
-1	Golgari Rot Farm		$0.04
-2	Tendo Ice Bridge		$10.86
+1	Eye of Ugin		$5.62
+2	Ghost Quarter		$0.08
+4	Urza's Tower		$1.48
+4	Urza's Power Plant		$0.88
+4	Urza's Mine		$0.72
+4	Grove of the Burnwillows		$0.00
 
 Sideboard
-1	Ghost Quarter		$0.04
-3	Leyline of Sanctity		$25.23
-2	Seal of Primordium		$0.08
-2	Pyroclasm		$0.08
+4	Nature's Claim		$0.20
+1	Relic of Progenitus		$0.12
+1	Spellskite		$24.21
+3	Rending Volley		$0.00
+2	Boil		$0.08
 2	Thragtusk		$6.88
-2	Swan Song		$0.24
-1	Hornet Queen		$0.51
-1	Nature's Claim		$0.05
+2	Vandalblast		$0.04

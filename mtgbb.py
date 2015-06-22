@@ -10,6 +10,9 @@ class Card:
 
     @property
     def lowest_price(self):
+        if not self.prices:
+            return 0.0
+
         return min(self.prices)
 
     def __str__(self):
@@ -30,6 +33,10 @@ def main():
     total = 0.0
 
     for card in cards:
+        if card.lowest_price == 0.0:
+            print "%s - NOT AVAILABLE" % card
+            continue
+
         total_for_card = card.quantity * card.lowest_price
         total += total_for_card
 
