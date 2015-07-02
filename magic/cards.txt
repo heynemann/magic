@@ -1,0 +1,25 @@
+4	Caged Sun
+1	Contagion Engine
+4	Mirrorworks
+# 4	Mox Opal
+4	Mycosynth Wellspring
+4	Semblance Anvil
+1	Soul Conduit
+4	Sphere of the Suns
+2	Spine of Ish Sah
+4	Throne of Geth
+
+Land (23)
+3	Inkmoth Nexus
+4	Phyrexia's Core
+
+Creature (5)
+1	Blightsteel Colossus
+4	Treasure Mage
+
+Sideboard (15)
+4	Gut Shot
+3	Negate
+1	Rewind
+3	Soul Conduit
+4	Trespassing Souleater

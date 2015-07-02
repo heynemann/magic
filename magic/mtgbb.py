@@ -1,33 +1,15 @@
 import requests
 import re
 
-
-class Card:
-    def __init__(self, quantity, name):
-        self.quantity = quantity
-        self.name = name
-        self.prices = []
-
-    @property
-    def lowest_price(self):
-        if not self.prices:
-            return 0.0
-
-        return min(self.prices)
-
-    def __str__(self):
-        return "%d %s (lowest: %.2f)" % (self.quantity, self.name, self.lowest_price)
-
-    def __repr__(self):
-        return str(self)
+from models import read_cards_file, get_card_list
 
 
 def main():
     cards = read_cards_file()
-    get_card_list(cards)
+    get_card_list(cards, fill_card_prices)
 
     print
-    print "RESULTS"
+    print "RESULTS - magic bem barato"
     print
 
     total = 0.0
@@ -53,29 +35,6 @@ def main():
     print
     print
     print "Total for decklist: R$ %.2f" % total
-
-
-def read_cards_file():
-    with open('cards.txt', 'r') as cards:
-        text = cards.readlines()
-
-    cards = []
-    for line in text:
-        if line.strip(' ') == '':
-            continue
-        if line[0] not in ['1', '2', '3', '4']:
-            continue
-
-        parts = [card.strip(' ') for card in line.split('\t') if card.strip(' ') != '']
-        cards.append(Card(quantity=int(parts[0]), name=parts[1]))
-
-    return cards
-
-
-def get_card_list(cards):
-    for card in cards:
-        print "Getting prices for %s..." % card.name
-        fill_card_prices(card)
 
 
 def fill_card_prices(card):

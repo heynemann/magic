@@ -1,0 +1,1072 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head><title>Magic Bem Barato</title>
+		    <link rel="stylesheet" type="text/css" href="estilos2.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="js/modernizr.custom.83410.js"></script>
+<script type="text/javascript" src="js/slides.min.jquery.js"></script>
+<script type="text/javascript" src="js/jquery.effects.core.min.js"></script>
+<script type="text/javascript" src="js/jquery.effects.slide.min.js"></script>
+<script type="text/javascript" src="js/jquery.effects.blind.min.js"></script>
+<script type="text/javascript" src="js/jquery.superbgimage.min.js"></script>
+<script type='text/javascript' src="http://www.seomaster.com.br/js/soboo2.js"></script>
+<script type="text/javascript">
+$(function() {
+
+	// Options for SuperBGImage
+	$.fn.superbgimage.options = {
+		randomtransition: 1, // 0-none, 1-use random transition (0-7)
+		slideshow: 1, // 0-none, 1-autostart slideshow
+		slide_interval: 60000, // interval for the slideshow
+		randomimage: 1, // 0-none, 1-random image
+		speed: 'slow' // animation speed
+	};
+
+	// initialize SuperBGImage
+	$('#thumbs').superbgimage().hide();
+
+});
+</script>    <script>
+        function produto(cod,n){
+            document.produto.cod.value=cod;
+            document.produto.carta.value=n;
+            document.produto.submit();
+        }
+        function inserirs(cod,foil){
+            document.comprar.cod.value=cod;
+            //alert(document.getElementById('quant'+cod).value);
+            document.comprar.quanti.value=document.getElementById('quant'+cod).value
+			document.comprar.foil.value=foil;
+            document.comprar.submit();
+        }
+    </script>
+    <body>
+
+
+            <form name=cadastrando action=login.php method=post>
+                <input type=hidden name=origem value=magic.php>
+                <input type=hidden name=destino value=cadastrar.php>
+            </form>
+            <form name=meuspedidos action=login.php method=post>
+                <input type=hidden name=origem value=magic.php>
+                <input type=hidden name=destino value=meuspedidos.php>
+            </form>
+            <form name=wishlistcab action=login.php method=post>
+                <input type=hidden name=origem value=magic.php>
+                <input type=hidden name=destino value=wishlist.php>
+            </form>
+            <form name=rodape action=detalhes.php method=get>
+                <input type=hidden name=pagina>
+            </form>
+            <form name=consultasimples action=buscar.php method=post>
+                <input type=hidden name=categoria>
+            </form>
+	<fieldset id="thumbs">
+		<legend class="legend">select image</legend>
+		<a href="imagens/1.jpg" title="">1</a>
+		<a href="imagens/2.jpg" title="">2</a>
+		<a href="imagens/3.jpg" title="">3</a>
+		<a href="imagens/4.jpg" title="">4</a>
+	</fieldset>
+        <script>
+		function createXMLHTTP() {
+		   var xmlHTTP;
+		   try
+		   {
+			   xmlHTTP = new XMLHttpRequest();
+		   }
+		   catch (e)
+		   {
+			   try
+			   {
+				   xmlHTTP = new ActiveXObject("Msxml2.XMLHTTP");
+			   }
+			   catch (e)
+			   {
+				   try
+				   {
+					   xmlHTTP = new ActiveXObject("Microsoft.XMLHTTP");
+				   }
+				   catch (e)
+				   {
+					   xmlHTTP = null;
+					   return false;
+				   }
+			   }
+		   }
+		   return xmlHTTP;
+		}
+		function recuperarFunc(Nome){
+			setTimeout("recuperarFunc2()",3)
+		}
+		function esconder(){
+			document.getElementById("procurando").style.visibility = "hidden";
+		}
+		function recuperarFunc2()
+		{
+			Nome=document.getElementById('nomec').value;
+			teste = Nome.length;
+			//alert(Nome+' '+teste);
+			if(teste==0){document.getElementById("procurando").style.visibility = "hidden";}
+			else{
+			var contador = document.getElementById('contadorprocurando').value;
+			contador++;
+			document.getElementById('contadorprocurando').value=contador;
+			var oHTTPRequest = createXMLHTTP();
+			oHTTPRequest.open("post", "procurar_cards_ajax3.php?nomec="+Nome, true);
+			oHTTPRequest.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+			oHTTPRequest.setRequestHeader("encoding", "UTF8");
+			//document.getElementById("procurando").style.visibility = "visible";
+			//document.getElementById("procurando").innerHTML = "Aguarde...";
+			oHTTPRequest.onreadystatechange=function() {
+				if (oHTTPRequest.readyState==4){
+					//alert(document.getElementById('contadorprocurando').value+' '+contador);
+					if(document.getElementById('contadorprocurando').value==contador){
+						document.getElementById("procurando").style.visibility = "visible";
+						document.getElementById("procurando").innerHTML = oHTTPRequest.responseText;
+					}
+				}
+			}
+			oHTTPRequest.send();
+			}
+		}
+		function volta(num){
+			document.getElementById('nomec').value=num;
+			document.getElementById("procurando").style.visibility="hidden";
+			busca();
+		}
+		function busca(){
+			document.consultasimples2.submit();
+		}
+		function verif_enter(e){
+			if(e.keyCode==13){
+				busca();
+			}
+		}
+		function cadastrando(){
+			document.cadastrando.submit();
+		}
+		function meuspedidos(){
+			document.meuspedidos.submit();
+		}
+		function wishlist(){
+			document.wishlistcab.submit();
+		}
+		function detalhes(val){
+			document.rodape.pagina.value=val;
+			document.rodape.submit();
+		}
+        function tipo(i){
+            document.consultasimples.categoria.value=i;
+            document.consultasimples.submit();
+        }
+        </script>
+	<div class="scanlines"></div>
+	<div id="tudo">
+	<header>
+		<!--Inicio Topo-->
+		<div id="faixa">
+			<div id="content-faixa"><!--inicio conteudo faixa-->
+				<div class="logo">
+					<a href="index.php"><img src="img/matriz_png2.png" alt="logo-magic-bem-barato" height='79x'/></a>
+				</div>
+				<div class="logar">Bem Vindo - <a href="cadastrar.php">Quero me cadastrar</a><span class="separador">|</span> <a href="recuperar.php">Esqueci Minha Senha</a></div>
+			  <div class="busca">
+				<form name=consultasimples2 action=buscar.php method=post>
+					<input type="text" class="form-busca" autocomplete=off name='nomec' id='nomec' value="Busca" onfocus="if(this.value=='Busca')this.value='';" onfocus="if(this.value=='Busca')this.value='';" onblur="setTimeout('esconder()',300)" onkeypress="recuperarFunc(this.value)" onkeyup="verif_enter(event);" />
+					<input type=hidden id="contadorprocurando" value="0" />
+					<div id="procurando">
+					&nbsp;</div>
+					<input type="submit" class="btn-busca" value="">
+				</form>
+			  </div>
+				<div class="carrinho"><a href="login.php">Login</a> <span class="separador">|</span><a href="javascript:meuspedidos()">Meus Pedidos</a>
+						<a class="cart" href=carrinho.php></a></div>
+			</div><!--fecha conteudo faixa-->
+		</div><!--fecha faixa-->
+		<div class="clear"></div>
+	</header><!--Fecha Topo-->
+	<div id="content"><!--inicio content-->
+		<nav><!--inicio menu-->
+			<div class="menu">
+				<ul>
+				<li><a href="index.php">Home</a></li>
+				<li><a href="javascript:detalhes('Quem');">Quem Somos</a></li>
+				<li><a href="javascript:detalhes('Duvidas');">DÃºvidas Frequentes</a></li>
+				<li><a href="javascript:detalhes('Promo');">PromoÃ§Ã£o do MÃªs</a></li>
+				<li><a href="javascript:cadastrando()">Cadastro</a></li>
+				<li><a href="vendaseuscards/index.php" target='_blank'>Venda Seus Cards</a></li>
+				<li><a href="javascript:wishlist()">Minha Lista de desejos</a></li>
+				<li><a href="contato.php">Contato</a></li>
+				</ul>
+			</div>
+		</nav><!--fecha menu--> <div class="conteudo">
+	<div class="conteudo">
+		<form name=pesquisa action=pesquisadetalhada.php method=post>
+		</form>
+		<aside><!--inicio lateral-->
+		<div class="categorias">
+			<nav>
+				<ul id="menu">
+				<li><a href="#">Magic</a>
+				<ul>	<li><a href="#">Cartas Avulsas</a>
+										<ul>
+										<li>
+										<a href=javascript:tipo(683);>- A Quinta Aurora</a>
+									</li>	<li>
+										<a href=javascript:tipo(654);>- Alara Renascida</a>
+									</li>	<li>
+										<a href=javascript:tipo(709);>- AlÃ­sios</a>
+									</li>	<li>
+										<a href=javascript:tipo(671);>- AlianÃ§as</a>
+									</li>	<li>
+										<a href=javascript:tipo(660);>- Alvorecer</a>
+									</li>	<li>
+										<a href=javascript:tipo(719);>- Antiquities</a>
+									</li>	<li>
+										<a href=javascript:tipo(695);>- Apocalipse</a>
+									</li>	<li>
+										<a href=javascript:tipo(809);>- AscensÃ£o das Trevas</a>
+									</li>	<li>
+										<a href=javascript:tipo(651);>- AscensÃ£o dos Eldrazi</a>
+									</li>	<li>
+										<a href=javascript:tipo(682);>- CampeÃµes de Kamigawa</a>
+									</li>	<li>
+										<a href=javascript:tipo(665);>- Caos Planar</a>
+									</li>	<li>
+										<a href=javascript:tipo(739);>- Chronicles</a>
+									</li>	<li>
+										<a href=javascript:tipo(650);>- Cicatrizes de Mirrodin</a>
+									</li>	<li>
+										<a href=javascript:tipo(722);>- Commander 2012</a>
+									</li>	<li>
+										<a href=javascript:tipo(900);>- Commander 2013</a>
+									</li>	<li>
+										<a href=javascript:tipo(934);>- Commander 2014</a>
+									</li>	<li>
+										<a href=javascript:tipo(655);>- Conflux</a>
+									</li>	<li>
+										<a href=javascript:tipo(696);>- ConjunÃ§Ã£o</a>
+									</li>	<li>
+										<a href=javascript:tipo(918);>- Conspiracy</a>
+									</li>	<li>
+										<a href=javascript:tipo(684);>- Darksteel</a>
+									</li>	<li>
+										<a href=javascript:tipo(666);>- DÃ©cima EdiÃ§Ã£o</a>
+									</li>	<li>
+										<a href=javascript:tipo(652);>- Despertar do Mundo</a>
+									</li>	<li>
+										<a href=javascript:tipo(702);>- Destino de Urza</a>
+									</li>	<li>
+										<a href=javascript:tipo(940);>- Destino Reescrito</a>
+									</li>	<li>
+										<a href=javascript:tipo(943);>- DragÃµes de Tarkir</a>
+									</li>	<li>
+										<a href=javascript:tipo(942);>- Duel Decks: Kiora vs. Elspeth</a>
+									</li>	<li>
+										<a href=javascript:tipo(657);>- Entardecer</a>
+									</li>	<li>
+										<a href=javascript:tipo(672);>- Era Glacial</a>
+									</li>	<li>
+										<a href=javascript:tipo(667);>- Espiral Temporal</a>
+									</li>	<li>
+										<a href=javascript:tipo(669);>- Espiral Temporal (Timeshifted)</a>
+									</li>	<li>
+										<a href=javascript:tipo(706);>- Exodo</a>
+									</li>	<li>
+										<a href=javascript:tipo(713);>- Fallen Empires</a>
+									</li>	<li>
+										<a href=javascript:tipo(686);>- Flagelo</a>
+									</li>	<li>
+										<a href=javascript:tipo(707);>- Fortaleza</a>
+									</li>	<li>
+										<a href=javascript:tipo(656);>- Fragmentos de Alara</a>
+									</li>	<li>
+										<a href=javascript:tipo(670);>- Frente Fria</a>
+									</li>	<li>
+										<a href=javascript:tipo(797);>- Innistrad</a>
+									</li>	<li>
+										<a href=javascript:tipo(674);>- InsurreiÃ§Ã£o</a>
+									</li>	<li>
+										<a href=javascript:tipo(697);>- InvasÃ£o</a>
+									</li>	<li>
+										<a href=javascript:tipo(689);>- Investida</a>
+									</li></ul><ul id="aolado1">	<li>
+										<a href=javascript:tipo(690);>- Julgamento</a>
+									</li>	<li>
+										<a href=javascript:tipo(930);>- Khans de Tarkir</a>
+									</li>	<li>
+										<a href=javascript:tipo(863);>- Labirinto do DragÃ£o</a>
+									</li>	<li>
+										<a href=javascript:tipo(703);>- Legado de Urza</a>
+									</li>	<li>
+										<a href=javascript:tipo(688);>- LegiÃµes</a>
+									</li>	<li>
+										<a href=javascript:tipo(662);>- Lorwyn</a>
+									</li>	<li>
+										<a href=javascript:tipo(663);>- M10</a>
+									</li>	<li>
+										<a href=javascript:tipo(661);>- M11</a>
+									</li>	<li>
+										<a href=javascript:tipo(659);>- M12</a>
+									</li>	<li>
+										<a href=javascript:tipo(819);>- M13</a>
+									</li>	<li>
+										<a href=javascript:tipo(880);>- M14</a>
+									</li>	<li>
+										<a href=javascript:tipo(922);>- M15</a>
+									</li>	<li>
+										<a href=javascript:tipo(701);>- MÃ¡scaras de MercÃ¡dia</a>
+									</li>	<li>
+										<a href=javascript:tipo(711);>- Miragem</a>
+									</li>	<li>
+										<a href=javascript:tipo(685);>- Mirrodin</a>
+									</li>	<li>
+										<a href=javascript:tipo(649);>- Mirrodin Sitiada</a>
+									</li>	<li>
+										<a href=javascript:tipo(917);>- Modern Event Deck</a>
+									</li>	<li>
+										<a href=javascript:tipo(869);>- Modern Masters</a>
+									</li>	<li>
+										<a href=javascript:tipo(950);>- Modern Masters 2015</a>
+									</li>	<li>
+										<a href=javascript:tipo(905);>- Nascidos dos Deuses</a>
+									</li>	<li>
+										<a href=javascript:tipo(700);>- NÃªmesis</a>
+									</li>	<li>
+										<a href=javascript:tipo(668);>- Nona EdiÃ§Ã£o</a>
+									</li>	<li>
+										<a href=javascript:tipo(648);>- Nova Phyrexia</a>
+									</li>	<li>
+										<a href=javascript:tipo(693);>- OdissÃ©ia</a>
+									</li>	<li>
+										<a href=javascript:tipo(673);>- Oitava EdiÃ§Ã£o</a>
+									</li>	<li>
+										<a href=javascript:tipo(676);>- Pacto das Guildas</a>
+									</li>	<li>
+										<a href=javascript:tipo(658);>- PÃ¢ntano Sombrio</a>
+									</li>	<li>
+										<a href=javascript:tipo(860);>- PortÃµes Violados</a>
+									</li>	<li>
+										<a href=javascript:tipo(699);>- Profecia</a>
+									</li>	<li>
+										<a href=javascript:tipo(687);>- Quarta EdiÃ§Ã£o</a>
+									</li>	<li>
+										<a href=javascript:tipo(681);>- Quinta EdiÃ§Ã£o</a>
+									</li>	<li>
+										<a href=javascript:tipo(677);>- Ravnica</a>
+									</li>	<li>
+										<a href=javascript:tipo(841);>- Retorno a Ravnica</a>
+									</li>	<li>
+										<a href=javascript:tipo(816);>- Retorno de Avacyn</a>
+									</li>	<li>
+										<a href=javascript:tipo(691);>- Revised</a>
+									</li>	<li>
+										<a href=javascript:tipo(704);>- Saga de Urza</a>
+									</li>	<li>
+										<a href=javascript:tipo(679);>- Salvadores de Kamigawa</a>
+									</li>	<li>
+										<a href=javascript:tipo(675);>- SÃ©tima EdiÃ§Ã£o</a>
+									</li>	<li>
+										<a href=javascript:tipo(678);>- Sexta EdiÃ§Ã£o</a>
+									</li>	<li>
+										<a href=javascript:tipo(708);>- Tempestade</a>
+									</li></ul><ul id="aolado2">	<li>
+										<a href=javascript:tipo(712);>- Terras Natais</a>
+									</li>	<li>
+										<a href=javascript:tipo(886);>- Theros</a>
+									</li>	<li>
+										<a href=javascript:tipo(692);>- Tormento</a>
+									</li>	<li>
+										<a href=javascript:tipo(680);>- Traidores de Kamigawa</a>
+									</li>	<li>
+										<a href=javascript:tipo(912);>- Viagem para Nyx</a>
+									</li>	<li>
+										<a href=javascript:tipo(664);>- VisÃ£o do Futuro</a>
+									</li>	<li>
+										<a href=javascript:tipo(710);>- VisÃµes</a>
+									</li>	<li>
+										<a href=javascript:tipo(653);>- Zendikar</a>
+									</li></ul>
+						</li>	<li><a href="#">Cartas por Encomenda</a>
+										<ul>
+										<li>
+										<a href=javascript:tipo(768);>-  WPN/Gateway</a>
+									</li>	<li>
+										<a href=javascript:tipo(721);>- Arabian Nights</a>
+									</li>	<li>
+										<a href=javascript:tipo(729);>- Archenemy</a>
+									</li>	<li>
+										<a href=javascript:tipo(735);>- Duel Decks: Divine vs. Demonic</a>
+									</li>	<li>
+										<a href=javascript:tipo(725);>- Duel Decks: Elspeth vs. Tezzeret</a>
+									</li>	<li>
+										<a href=javascript:tipo(732);>- Duel Decks: Garruk vs. Liliana</a>
+									</li>	<li>
+										<a href=javascript:tipo(887);>- Duel Decks: Heroes vs. Monsters</a>
+									</li>	<li>
+										<a href=javascript:tipo(894);>- Duel Decks: Izzet vs. Golgari</a>
+									</li>	<li>
+										<a href=javascript:tipo(736);>- Duel Decks: Jace vs. Chandra</a>
+									</li>	<li>
+										<a href=javascript:tipo(910);>- Duel Decks: Jace vs. Vraska</a>
+									</li>	<li>
+										<a href=javascript:tipo(723);>- Duel Decks: Knights vs. Dragons</a>
+									</li>	<li>
+										<a href=javascript:tipo(895);>- Duel Decks: Sorin vs. Tibalt</a>
+									</li>	<li>
+										<a href=javascript:tipo(928);>- Duel Decks: Speed vs. Cunning</a>
+									</li>	<li>
+										<a href=javascript:tipo(893);>- Duel Decks: Venser vs. Koth</a>
+									</li>	<li>
+										<a href=javascript:tipo(774);>- Friday Night Magic</a>
+									</li>	<li>
+										<a href=javascript:tipo(938);>- From the Vault: Annihilation</a>
+									</li>	<li>
+										<a href=javascript:tipo(734);>- From the Vault: Exiled</a>
+									</li>	<li>
+										<a href=javascript:tipo(799);>- From the Vault: Legends</a>
+									</li>	<li>
+										<a href=javascript:tipo(901);>- From the Vault: Realms</a>
+									</li>	<li>
+										<a href=javascript:tipo(726);>- From the Vault: Relics</a>
+									</li>	<li>
+										<a href=javascript:tipo(903);>- From the Vault: Twenty</a>
+									</li>	<li>
+										<a href=javascript:tipo(758);>- Grand Prix</a>
+									</li>	<li>
+										<a href=javascript:tipo(778);>- Judge Gift Program</a>
+									</li>	<li>
+										<a href=javascript:tipo(715);>- Legends</a>
+									</li>	<li>
+										<a href=javascript:tipo(760);>- Magic Game Day Cards</a>
+									</li>	<li>
+										<a href=javascript:tipo(775);>- Magic Player Rewards</a>
+									</li>	<li>
+										<a href=javascript:tipo(765);>- Magic: The Gathering Launch Parties</a>
+									</li>	<li>
+										<a href=javascript:tipo(785);>- Media Inserts</a>
+									</li>	<li>
+										<a href=javascript:tipo(733);>- Planechase</a>
+									</li>	<li>
+										<a href=javascript:tipo(862);>- Planechase 2012 Edition</a>
+									</li>	<li>
+										<a href=javascript:tipo(724);>- Premium Deck Series: Fire and Lightning</a>
+									</li>	<li>
+										<a href=javascript:tipo(731);>- Premium Deck Series: Slivers</a>
+									</li>	<li>
+										<a href=javascript:tipo(763);>- Prerelease Events</a>
+									</li>	<li>
+										<a href=javascript:tipo(764);>- Release Events</a>
+									</li>	<li>
+										<a href=javascript:tipo(714);>- The Dark</a>
+									</li>	<li>
+										<a href=javascript:tipo(749);>- Unglued</a>
+									</li>	<li>
+										<a href=javascript:tipo(748);>- Unhinged</a>
+									</li>	<li>
+										<a href=javascript:tipo(694);>- Unlimited</a>
+									</li></ul>
+						</li>	<li><a href="#">Decks Completos</a>
+										<ul>
+										<li>
+										<a href=javascript:tipo(803);>- AvanÃ§ado</a>
+									</li>	<li>
+										<a href=javascript:tipo(801);>- BÃ¡sico</a>
+									</li>	<li>
+										<a href=javascript:tipo(802);>- IntermediÃ¡rio</a>
+									</li>	<li>
+										<a href=javascript:tipo(866);>- Lacrados</a>
+									</li></ul>
+						</li>	<li><a href="#">Lotes de Cards</a>
+										<ul>
+										<li>
+										<a href=javascript:tipo(806);>- Comuns</a>
+									</li>	<li>
+										<a href=javascript:tipo(805);>- Incomuns</a>
+									</li>	<li>
+										<a href=javascript:tipo(904);>- Mal Estado</a>
+									</li>	<li>
+										<a href=javascript:tipo(807);>- Raros</a>
+									</li>	<li>
+										<a href=javascript:tipo(808);>- Terrenos</a>
+									</li></ul>
+						</li>	<li><a href="#">Token - Fichas</a>
+										<ul>
+										<li>
+										<a href=javascript:tipo(846);>- Alara Renascida</a>
+									</li>	<li>
+										<a href=javascript:tipo(839);>- Alvorecer</a>
+									</li>	<li>
+										<a href=javascript:tipo(891);>- Archenemy</a>
+									</li>	<li>
+										<a href=javascript:tipo(824);>- AscensÃ£o das Trevas</a>
+									</li>	<li>
+										<a href=javascript:tipo(832);>- AscensÃ£o dos Eldrazi</a>
+									</li>	<li>
+										<a href=javascript:tipo(830);>- Cicatrizes de Mirrodin</a>
+									</li>	<li>
+										<a href=javascript:tipo(937);>- Commander 2014</a>
+									</li>	<li>
+										<a href=javascript:tipo(847);>- Conflux</a>
+									</li>	<li>
+										<a href=javascript:tipo(919);>- Conspiracy</a>
+									</li>	<li>
+										<a href=javascript:tipo(848);>- DÃ©cima EdiÃ§Ã£o</a>
+									</li>	<li>
+										<a href=javascript:tipo(833);>- Despertar do Mundo</a>
+									</li>	<li>
+										<a href=javascript:tipo(944);>- Dragons of Tarkir</a>
+									</li>	<li>
+										<a href=javascript:tipo(828);>- Duel Deck Dragon vs Knight</a>
+									</li>	<li>
+										<a href=javascript:tipo(868);>- Duel Deck Sorin vs Tibalt</a>
+									</li>	<li>
+										<a href=javascript:tipo(929);>- Duel Deck Speed vs Cunning</a>
+									</li>	<li>
+										<a href=javascript:tipo(823);>- Duel Deck Venser vs Koth</a>
+									</li>	<li>
+										<a href=javascript:tipo(851);>- Duel Decks Ajani vs Nicol Bolas</a>
+									</li>	<li>
+										<a href=javascript:tipo(855);>- Duel Decks Divine vs Demonic</a>
+									</li>	<li>
+										<a href=javascript:tipo(852);>- Duel Decks Elspeth vs Tezzeret</a>
+									</li>	<li>
+										<a href=javascript:tipo(857);>- Duel Decks Elves vs Goblins</a>
+									</li>	<li>
+										<a href=javascript:tipo(888);>- Duel Decks Heroes vs Monsters</a>
+									</li>	<li>
+										<a href=javascript:tipo(850);>- Duel Decks Izzet vs Golgari</a>
+									</li>	<li>
+										<a href=javascript:tipo(856);>- Duel Decks Jace vs Chandra</a>
+									</li>	<li>
+										<a href=javascript:tipo(853);>- Duel Decks Phyrexia vs The Coalition</a>
+									</li>	<li>
+										<a href=javascript:tipo(837);>- Entardecer</a>
+									</li>	<li>
+										<a href=javascript:tipo(941);>- Fate Reforged</a>
+									</li>	<li>
+										<a href=javascript:tipo(836);>- Fragmentos de Alara</a>
+									</li>	<li>
+										<a href=javascript:tipo(849);>- Frente Fria</a>
+									</li>	<li>
+										<a href=javascript:tipo(825);>- Innistrad</a>
+									</li>	<li>
+										<a href=javascript:tipo(933);>- Khans of Tarkir</a>
+									</li>	<li>
+										<a href=javascript:tipo(867);>- Labirinto do DragÃ£o</a>
+									</li>	<li>
+										<a href=javascript:tipo(840);>- Lorwyn</a>
+									</li>	<li>
+										<a href=javascript:tipo(835);>- M10</a>
+									</li>	<li>
+										<a href=javascript:tipo(831);>- M11</a>
+									</li>	<li>
+										<a href=javascript:tipo(826);>- M12</a>
+									</li>	<li>
+										<a href=javascript:tipo(821);>- M13</a>
+									</li>	<li>
+										<a href=javascript:tipo(882);>- M14</a>
+									</li>	<li>
+										<a href=javascript:tipo(924);>- M15</a>
+									</li>	<li>
+										<a href=javascript:tipo(829);>- Mirrodin Sitiada</a>
+									</li>	<li>
+										<a href=javascript:tipo(920);>- Modern Event Deck</a>
+									</li></ul><ul id="aolado1">	<li>
+										<a href=javascript:tipo(902);>- Modern Masters</a>
+									</li>	<li>
+										<a href=javascript:tipo(949);>- Modern Masters 2015</a>
+									</li>	<li>
+										<a href=javascript:tipo(908);>- Nascido dos Deuses</a>
+									</li>	<li>
+										<a href=javascript:tipo(827);>- Nova Phyrexia</a>
+									</li>	<li>
+										<a href=javascript:tipo(838);>- PÃ¢ntano Sombrio</a>
+									</li>	<li>
+										<a href=javascript:tipo(892);>- Planechase 2012</a>
+									</li>	<li>
+										<a href=javascript:tipo(861);>- PortÃµes Violados</a>
+									</li>	<li>
+										<a href=javascript:tipo(842);>- Retorno a Ravnica</a>
+									</li>	<li>
+										<a href=javascript:tipo(822);>- Retorno de Avacyn</a>
+									</li>	<li>
+										<a href=javascript:tipo(889);>- Theros</a>
+									</li>	<li>
+										<a href=javascript:tipo(951);>- Unglued</a>
+									</li>	<li>
+										<a href=javascript:tipo(913);>- Viagem para Nyx</a>
+									</li>	<li>
+										<a href=javascript:tipo(834);>- Zendikar</a>
+									</li></ul>
+						</li>	<li><a href="#">Booster e Promocionais</a>
+										<ul>
+										<li>
+										<a href=javascript:tipo(945);>- Destino Reescrito</a>
+									</li>	<li>
+										<a href=javascript:tipo(947);>- DragÃµes de Tarkir</a>
+									</li>	<li>
+										<a href=javascript:tipo(932);>- Khans de Tarkir</a>
+									</li>	<li>
+										<a href=javascript:tipo(946);>- Kits Promocionais</a>
+									</li>	<li>
+										<a href=javascript:tipo(923);>- M15</a>
+									</li>	<li>
+										<a href=javascript:tipo(906);>- Nascidos dos Deuses</a>
+									</li>	<li>
+										<a href=javascript:tipo(914);>- Viagem para Nyx</a>
+									</li></ul>
+						</li>
+						</ul>
+						</li>
+							<li><a href="#">AcessÃ³rios</a>
+										<ul>
+										<li>
+										<a href=javascript:tipo(800);>- Dados</a>
+									</li>	<li>
+										<a href=javascript:tipo(789);>- Deck Box</a>
+									</li>	<li>
+										<a href=javascript:tipo(793);>- FichÃ¡rios</a>
+									</li>	<li>
+										<a href=javascript:tipo(790);>- Folha de FichÃ¡rio</a>
+									</li>	<li>
+										<a href=javascript:tipo(936);>- Pacotes Promocionais</a>
+									</li>	<li>
+										<a href=javascript:tipo(844);>- Playmats</a>
+									</li>	<li>
+										<a href=javascript:tipo(791);>- Shields - Protetores</a>
+									</li></ul>
+						</li>	<li><a href="#">PokÃ©mon</a>
+										<ul>
+										<li>
+										<a href=javascript:tipo(811);>- Boosters</a>
+									</li>	<li>
+										<a href=javascript:tipo(810);>- Decks</a>
+									</li>	<li>
+										<a href=javascript:tipo(812);>- Pacotes Promocionais</a>
+									</li></ul>
+						</li>	<li><a href="#">Battle Scenes</a>
+										<ul>
+										<li>
+										<a href=javascript:tipo(883);>- Boosters</a>
+									</li>	<li><a href="#">- Cartas Avulsas</a>
+										<ul>
+										<li>
+										<a href=javascript:tipo(898);>-- EvoluÃ§Ã£o TÃ¡tica</a>
+									</li>	<li>
+										<a href=javascript:tipo(948);>-- Iniciativa Vingadores</a>
+									</li>	<li>
+										<a href=javascript:tipo(935);>-- InvasÃ£o CÃ³smica</a>
+									</li>	<li>
+										<a href=javascript:tipo(921);>-- MÃºltiplas Identidades</a>
+									</li>	<li>
+										<a href=javascript:tipo(911);>-- Poderes Ocultos</a>
+									</li>	<li>
+										<a href=javascript:tipo(885);>-- Universo Marvel</a>
+									</li></ul>
+						</li>	<li>
+										<a href=javascript:tipo(884);>- Decks</a>
+									</li>	<li>
+										<a href=javascript:tipo(931);>- Pacotes Promocionais</a>
+									</li>
+					</ul>
+						</li>	<li><a href="#">Action Figure</a>
+										<ul>
+										<li>
+										<a href=javascript:tipo(915);>- The Walking Dead</a>
+									</li></ul>
+						</li>
+				<li><a href="javascript:document.pesquisa.submit()">Busca AvanÃ§ada</a></li>
+				</ul>
+			</nav>
+		</div>
+
+		<div class="banners">
+			<a href=javascript:detalhes('Promo');><img src="imagens/banner-promocional-1.png" alt="banner-promocional-1"/></a>
+		</div>
+
+		<div class="banners">
+			<a href='http://perfil.mercadolivre.com.br/MAGICBEMBARATO' target='_blank'>
+				<img src="imagens/banner-promocional-2.png" alt="banner-promocional-2"/>
+			</a>
+		</div>
+
+		<div class="banners">
+			<a href="detalhes.php?pagina=trabalho";><img src="imagens/banner-battle.jpg" alt="banner-battle"/></a>
+		</div>
+
+		<div class="enquete">
+			<h6>Enquete</h6>
+			Como vocÃª conheceu<br/>
+			nossa loja?<br/>
+				<script>
+					function validaenq(){
+						var i=0;
+						var valida=false;
+						for(i=0;i<5;i++){
+							if(document.enquete.enq[i].checked==true)
+								valida=true;
+						}
+						if(valida==false)
+							alert('escolha uma opcao da enquete');
+						else
+							document.enquete.submit();
+					}
+				</script>
+				<form class="forms" method="post" action="enquete.php" target="_blank" name="enquete">
+						<input type="radio" value="1" name="enq" class="chek">Mercado Livre<br>
+						<input type="radio" value="2" name="enq" class="chek">Google<br>
+						<input type="radio" value="3" name="enq" class="chek">Facebook<br>
+						<input type="radio" value="4" name="enq" class="chek">Amigos<br>
+						<input type="radio" value="5" name="enq" class="chek">Forum sobre Magic<br>
+						<input type="button" value="Enviar" onclick="document.enquete.submit()" class="btn-enquete" name="Enviar">
+					</form>
+		</div>
+		</aside><!--fecha lateral--><article>
+			<div class="centro"><!--inicio centro-->
+                        <div class="clear"></div>
+                        	<div class="content-produto">
+		<form name=consultasimples3 action=buscar.php method=post>
+			<input type=hidden name='sinal_info3' value="">
+			<input type=hidden name='secao' value="">
+			<input type=hidden name='buscar_por' value="">
+			<input type=hidden name='sinal_info5' value="">
+			<input type=hidden name='info5' value="">
+			<input type=hidden name='sinal_info6'  value="">
+			<input type=hidden name='info6' value="">
+			<input type=hidden name='sinal_info4' value="">
+			<input type=hidden name='info4' value="">
+			<input type=hidden name='info3b' value="">
+			<input type=hidden name='preco_de' value="">
+			<input type=hidden name='preco_ate' value="">
+			<input type=hidden name='I1_x' value="">
+			<input type=hidden name='I1_y' value="">
+			<input type=hidden name='limit' value="">
+			<input type=hidden name='nomec' value="Inkmoth Nexus">
+			<input type=hidden name='categoria' value="">
+			<input type=hidden name='info1' value="">
+			<input type=hidden name='cor' value="">
+			<input type=hidden name='foil' value="">
+			<input type=hidden name='mal' value="">
+
+		</form><script>
+            function limitlimit(v){
+				document.consultasimples3.limit.value=v;
+                document.consultasimples3.submit();
+            }
+          </script>
+        <input type=hidden id=wherecoutn value=''><form name='selecionadas' action='comprarseldeck.php'  method='post'><table width=100% border=0 cellspacing=5 id=testo><tr>
+			<td width=20%></td>
+			<td width=30%></td>
+			<td width=25%></td>
+			<td colspan=2 align=right width=25%>Comprar</td>
+			</tr>
+			<tr>
+
+				<td colspan=2 >
+					<div id='85780' style='position:absolute;margin-top: 40px;visibility: hidden;width:auto;border:1px solid #000;background-color:#fff'>
+						<table width=450px celpadding=0 border=0>
+							<tr>
+								<td valign=top width=150px>
+									<img src=http://magiccards.info/scans/en/mm2/236.jpg height=200px>
+								</td>
+									<td align=left>
+										<b> 10 unidade(s) em estoque</b><hr>
+										Blinkmoth Nexus <br /> Blinkmoth Nexus<hr>
+										<hr>Land<hr><img src=img/mana/magic_t.gif>: Add <img src=img/mana/magic_1.gif>> to your mana pool.<br><br><img src=img/mana/magic_1.gif>>: Blinkmoth Nexus becomes a 1/1 Blinkmoth artifact creature with flying until end of turn. It's still a land.<br><br><img src=img/mana/magic_1.gif>>, <img src=img/mana/magic_t.gif>: Target Blinkmoth creature gets +1/+1 until end of turn.
+									</td>
+							</tr>
+						</table>
+					</div>
+					<span onmouseover=javascript:document.getElementById('85780').style.visibility='visible'; onmouseout=javascript:document.getElementById('85780').style.visibility='hidden'>
+						<a href="produto.php?cod=85780&Cartas-Avulsas-Blinkmoth-Nexus-Blinkmoth-Nexus" style='font-size: 14px' >Blinkmoth Nexus / Blinkmoth Nexus</a>
+					</span>
+				</td>
+					<td width=18%>
+						<font style='font-size: 14px' color='#333333'>Modern Masters 2015</font>
+					</td>
+					<td width=18% align=right>
+					<table>
+						<tr>
+							<td>
+								<font style='font-size: 14px' color='#333333'><b>R$ 38.01 </b></font><input name='quant85780' type=text value=1 maxlength=3 style=width:30px id='quant85780' onkeyup="document.getElementById('comprar85780').checked=true;">
+							</td>
+							<td>
+								<table>
+									<tr>
+										<td>
+											<input type="button" value="+" style="width: 15px;height:15px;font-size:8px;" onclick="javascript:document.getElementById('quant85780').value++;document.getElementById('comprar85780').checked=true;">
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<input type="button" value="-" style="width: 15px;height:15px;font-size:8px;"  onclick="javascript:if(document.getElementById('quant85780').value>1)document.getElementById('quant85780').value--;document.getElementById('comprar85780').checked=true;">
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+				</td>
+				<td width=15% align=center>
+					<input type=checkbox name=comprar[] id='comprar85780' value='85780'>
+					<input type=hidden name='foil85780' value='0'>
+					<input type=hidden name='mal85780' value=''>
+				</td>
+			</tr>
+				<td colspan=2 >
+					<div id='79528' style='position:absolute;margin-top: 40px;visibility: hidden;width:auto;border:1px solid #000;background-color:#fff'>
+						<table width=450px celpadding=0 border=0>
+							<tr>
+								<td valign=top width=150px>
+									<img src=http://magiccards.info/scans/en/mma/220.jpg height=200px>
+								</td>
+									<td align=left>
+										<b> 4 unidade(s) em estoque</b><hr>
+										Blinkmoth Nexus <br /> Blinkmoth Nexus<hr>
+										<hr>Land<hr><img src=img/mana/magic_t.gif>: Add <img src=img/mana/magic_1.gif>> to your mana pool.<br><br><img src=img/mana/magic_1.gif>>: Blinkmoth Nexus becomes a 1/1 Blinkmoth artifact creature with flying until end of turn. It's still a land.<br><br><img src=img/mana/magic_1.gif>>, <img src=img/mana/magic_t.gif>: Target Blinkmoth creature gets +1/+1 until end of turn.
+									</td>
+							</tr>
+						</table>
+					</div>
+					<span onmouseover=javascript:document.getElementById('79528').style.visibility='visible'; onmouseout=javascript:document.getElementById('79528').style.visibility='hidden'>
+						<a href="produto.php?cod=79528&Cartas-Avulsas-Blinkmoth-Nexus-Blinkmoth-Nexus" style='font-size: 14px' >Blinkmoth Nexus / Blinkmoth Nexus</a>
+					</span>
+				</td>
+					<td width=18%>
+						<font style='font-size: 14px' color='#333333'>Modern Masters</font>
+					</td>
+					<td width=18% align=right>
+					<table>
+						<tr>
+							<td>
+								<font style='font-size: 14px' color='#333333'><b>R$ 49.81 </b></font><input name='quant79528' type=text value=1 maxlength=3 style=width:30px id='quant79528' onkeyup="document.getElementById('comprar79528').checked=true;">
+							</td>
+							<td>
+								<table>
+									<tr>
+										<td>
+											<input type="button" value="+" style="width: 15px;height:15px;font-size:8px;" onclick="javascript:document.getElementById('quant79528').value++;document.getElementById('comprar79528').checked=true;">
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<input type="button" value="-" style="width: 15px;height:15px;font-size:8px;"  onclick="javascript:if(document.getElementById('quant79528').value>1)document.getElementById('quant79528').value--;document.getElementById('comprar79528').checked=true;">
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+				</td>
+				<td width=15% align=center>
+					<input type=checkbox name=comprar[] id='comprar79528' value='79528'>
+					<input type=hidden name='foil79528' value='0'>
+					<input type=hidden name='mal79528' value=''>
+				</td>
+			</tr>
+				<td colspan=2 >
+					<div id='79528Foil' style='position:absolute;margin-top: 40px;visibility: hidden;width:auto;border:1px solid #000;background-color:#fff'>
+						<table width=450px celpadding=0 border=0>
+							<tr>
+								<td valign=top width=150px>
+									<img src=http://magiccards.info/scans/en/mma/220.jpg height=200px>
+								</td>
+									<td align=left>
+										<b>(FOIL) 1 card(s) em estoque</b><hr>
+										Blinkmoth Nexus <br /> Blinkmoth Nexus<hr>
+										<hr>Land<hr><img src=img/mana/magic_t.gif>: Add <img src=img/mana/magic_1.gif>> to your mana pool.<br><br><img src=img/mana/magic_1.gif>>: Blinkmoth Nexus becomes a 1/1 Blinkmoth artifact creature with flying until end of turn. It's still a land.<br><br><img src=img/mana/magic_1.gif>>, <img src=img/mana/magic_t.gif>: Target Blinkmoth creature gets +1/+1 until end of turn.
+									</td>
+							</tr>
+						</table>
+					</div>
+					<span onmouseover=javascript:document.getElementById('79528Foil').style.visibility='visible'; onmouseout=javascript:document.getElementById('79528Foil').style.visibility='hidden'>
+						<a href="produto.php?cod=79528&foil=1&Cartas-Avulsas-Blinkmoth-Nexus-Blinkmoth-Nexus" style='font-size: 14px' >Blinkmoth Nexus / Blinkmoth Nexus (FOIL)</a>
+					</span>
+				</td>
+					<td width=18%>
+						<font style='font-size: 14px' color='#333333'>Modern Masters</font>
+					</td>
+					<td width=18% align=right>
+					<table>
+						<tr>
+							<td>
+								<font style='font-size: 14px' color='#333333'><b>R$ 220.88 </b></font><input name='quant79528foil' type=text value=1 maxlength=3 style=width:30px id='quant79528foil' onkeyup="document.getElementById('comprar79528').checked=true;if(this.value>1)this.value='1';">
+							</td>
+							<td>
+								<table>
+									<tr>
+										<td>
+											<input type="button" value="+" style="width: 15px;height:15px;font-size:8px;" onclick="javascript:if(document.getElementById('quant79528foil').value<1)document.getElementById('quant79528foil').value++;document.getElementById('comprar79528foil').checked=true;">
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<input type="button" value="-" style="width: 15px;height:15px;font-size:8px;"  onclick="javascript:if(document.getElementById('quant79528foil').value>1)document.getElementById('quant79528foil').value--;document.getElementById('comprar79528foil').checked=true;">
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+				</td>
+				<td width=15% align=center>
+					<input type=checkbox name=comprar[] id='comprar79528foil' value='79528foil'>
+					<input type=hidden name='foil79528foil' value='1'>
+					<input type=hidden name='mal79528foil' value=''>
+				</td>
+			</tr>
+				<td colspan=2 >
+					<div id='62665' style='position:absolute;margin-top: 40px;visibility: hidden;width:auto;border:1px solid #000;background-color:#fff'>
+						<table width=450px celpadding=0 border=0>
+							<tr>
+								<td valign=top width=150px>
+									<img src=http://magiccards.info/scans/en/ds/163.jpg height=200px>
+								</td>
+									<td align=left>
+										<b> 19 unidade(s) em estoque</b><hr>
+										Nexo de Mosco-lumes <br /> Blinkmoth Nexus<hr>
+										<img src=img/mana/magic_t.gif>: Adiciona <img src=img/mana/magic_1.gif>> Ã  sua reserva de mana. <br><br><img src=img/mana/magic_1.gif>>: Nexo de Mosco-lumes torna-se, atÃ© o final do turno, uma criatura artefato 1/1 , com a habilidade de voar, do tipo Mosco-lume. Ela ainda Ã© um terreno. <br><br><img src=img/mana/magic_1.gif>>, <img src=img/mana/magic_t.gif>: O Mosco-lume alvo recebe +1/+1 atÃ© o final do turno.<hr>Land<hr><img src=img/mana/magic_t.gif>: Add <img src=img/mana/magic_1.gif>> to your mana pool.<br><br><img src=img/mana/magic_1.gif>>: Blinkmoth Nexus becomes a 1/1 Blinkmoth artifact creature with flying until end of turn. It's still a land.<br><br><img src=img/mana/magic_1.gif>>, <img src=img/mana/magic_t.gif>: Target Blinkmoth creature gets +1/+1 until end of turn.
+
+									</td>
+							</tr>
+						</table>
+					</div>
+					<span onmouseover=javascript:document.getElementById('62665').style.visibility='visible'; onmouseout=javascript:document.getElementById('62665').style.visibility='hidden'>
+						<a href="produto.php?cod=62665&Cartas-Avulsas-Nexo-de-Mosco-lumes-Blinkmoth-Nexus" style='font-size: 14px' >Nexo de Mosco-lumes / Blinkmoth Nexus</a>
+					</span>
+				</td>
+					<td width=18%>
+						<font style='font-size: 14px' color='#333333'>Darksteel</font>
+					</td>
+					<td width=18% align=right>
+					<table>
+						<tr>
+							<td>
+								<font style='font-size: 14px' color='#333333'><b>R$ 45.53 </b></font><input name='quant62665' type=text value=1 maxlength=3 style=width:30px id='quant62665' onkeyup="document.getElementById('comprar62665').checked=true;">
+							</td>
+							<td>
+								<table>
+									<tr>
+										<td>
+											<input type="button" value="+" style="width: 15px;height:15px;font-size:8px;" onclick="javascript:document.getElementById('quant62665').value++;document.getElementById('comprar62665').checked=true;">
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<input type="button" value="-" style="width: 15px;height:15px;font-size:8px;"  onclick="javascript:if(document.getElementById('quant62665').value>1)document.getElementById('quant62665').value--;document.getElementById('comprar62665').checked=true;">
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+				</td>
+				<td width=15% align=center>
+					<input type=checkbox name=comprar[] id='comprar62665' value='62665'>
+					<input type=hidden name='foil62665' value='0'>
+					<input type=hidden name='mal62665' value=''>
+				</td>
+			</tr>
+				<td colspan=2 >
+					<div id='54344' style='position:absolute;margin-top: 40px;visibility: hidden;width:auto;border:1px solid #000;background-color:#fff'>
+						<table width=450px celpadding=0 border=0>
+							<tr>
+								<td valign=top width=150px>
+									<img src=http://magiccards.info/scans/en/mbs/145.jpg height=200px>
+								</td>
+									<td align=left>
+										<b> 18 unidade(s) em estoque</b><hr>
+										Nexo de Mosco-tintas <br /> Inkmoth Nexus<hr>
+										<img src=img/mana/magic_t.gif>: Adicione <img src=img/mana/magic_1.gif>> Ã  sua reserva de mana.<br><br><img src=img/mana/magic_1.gif>>: Nexo de Mosco-tintas torna-se uma criatura artefato 1/1 do tipo Mosco-lume com voar e infectar atÃ© o final do turno. Ela ainda conta como um terreno. (Ela causa dano a criaturas na forma de marcadores -1/-1 e a jogadores na forma de marcadores de veneno.)<hr>Land<hr><img src=img/mana/magic_t.gif>: Add <img src=img/mana/magic_1.gif>> to your mana pool.<br><br><img src=img/mana/magic_1.gif>>: Inkmoth Nexus becomes a 1/1 Blinkmoth artifact creature with flying and infect until end of turn. It's still a land. (It deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)
+
+									</td>
+							</tr>
+						</table>
+					</div>
+					<span onmouseover=javascript:document.getElementById('54344').style.visibility='visible'; onmouseout=javascript:document.getElementById('54344').style.visibility='hidden'>
+						<a href="produto.php?cod=54344&Cartas-Avulsas-Nexo-de-Mosco-tintas-Inkmoth-Nexus" style='font-size: 14px' >Nexo de Mosco-tintas / Inkmoth Nexus</a>
+					</span>
+				</td>
+					<td width=18%>
+						<font style='font-size: 14px' color='#333333'>Mirrodin Sitiada</font>
+					</td>
+					<td width=18% align=right>
+					<table>
+						<tr>
+							<td>
+								<font style='font-size: 14px' color='#333333'><b>R$ 119.86 </b></font><input name='quant54344' type=text value=1 maxlength=3 style=width:30px id='quant54344' onkeyup="document.getElementById('comprar54344').checked=true;">
+							</td>
+							<td>
+								<table>
+									<tr>
+										<td>
+											<input type="button" value="+" style="width: 15px;height:15px;font-size:8px;" onclick="javascript:document.getElementById('quant54344').value++;document.getElementById('comprar54344').checked=true;">
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<input type="button" value="-" style="width: 15px;height:15px;font-size:8px;"  onclick="javascript:if(document.getElementById('quant54344').value>1)document.getElementById('quant54344').value--;document.getElementById('comprar54344').checked=true;">
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+				</td>
+				<td width=15% align=center>
+					<input type=checkbox name=comprar[] id='comprar54344' value='54344'>
+					<input type=hidden name='foil54344' value='0'>
+					<input type=hidden name='mal54344' value=''>
+				</td>
+			</tr>
+		<tr>
+			<td colspan=5 align=right>
+				<input type="button" value="Comprar" onclick="document.selecionadas.submit()" class="btn-carrinho" style="width:100px;height:34px" name="Comprar">
+				<!--a href=# onclick='document.selecionadas.submit()'>
+					<img src=img/btn_comprar.gif alt=comprar border=0>
+				</a-->
+			</td>
+		</tr><tr><td></td></tr><tr><td style='font-size: 8pt' color='#333333'>1 a 4 de 4</td><td colspan=4 align=center><a href="javascript:limitlimit('0')">Primeira</a>&nbsp;<a href="javascript:limitlimit('0')" style='font-size: 8pt'><b>1</b></a>&nbsp;<a href=# onclick="javascript:limitlimit('0')">Ultima</a>&nbsp;</td></tr></tr>
+    </table>
+	</form></div></div><!--fecha conteudo centro-->
+
+		</div><!--Fecha Centro-->
+
+		<div class="clear"></div>
+
+	</article>
+</div><!--fecha conteudo-->
+</div><!--fecha content-->
+		<footer><!--inicio rodape-->
+			<div class="rodape">
+				<div class="fot1">
+				Telefone - 11 3628 9292<br/>
+email - <a href="mailto:atendimento@magicbembarato.com.br">atendimento@magicbembarato.com.br</a>
+				</div>
+				<div class="fot2">
+					Formas de pagamentos:<br/>
+					<img src="imagens/cartoes.png" alt="cartoes"/>
+					</div>
+					<!--div class="fot3">
+						Layout Desenvolvido por:<br/>
+						<a href="http://morishitadesigner.com.br" target="_blank"><img src="imagens/morishita-designer.png" alt="morishita-designer"/></a>
+					</div-->
+			</div>
+		</footer><!--fecha rodape-->
+
+		<script src="js/slides.min.jquery.js"></script>
+            <form name="produto" action="produto.php" method="get">
+            <input type="hidden" name="carta" value="">
+            <input type="hidden" name="cod" value="">
+        </form>
+        <form name=comprar action=inserirsacolas.php method=post>
+            <input type=hidden name=cod>
+            <input type=hidden name=quanti>
+			<input type=hidden name=foil>
+        </form>
+		</div>
+    </body>
+</html>
